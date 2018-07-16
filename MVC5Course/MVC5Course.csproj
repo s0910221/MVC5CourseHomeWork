@@ -339,6 +339,7 @@
     <Content Include="Views\Shared\EditorTemplates\客戶銀行資訊.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\客戶聯絡人.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\客戶聯絡人.cshtml" />
+    <Content Include="Views\Shared\Error_DbEntityValidationException.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

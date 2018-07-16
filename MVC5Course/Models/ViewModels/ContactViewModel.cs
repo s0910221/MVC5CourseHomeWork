@@ -15,7 +15,7 @@ namespace MVC5Course.Models.ViewModels
         [Required]
         public string 職稱 { get; set; }
 
-        [InputValidations.Phone]
+        //[InputValidations.Phone]
         [StringLength(50, ErrorMessage = "欄位長度不得大於 50 個字元")]
         public string 手機 { get; set; }
 
