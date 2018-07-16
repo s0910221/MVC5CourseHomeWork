@@ -1,5 +1,12 @@
 ﻿@model MVC5Course.Models.客戶聯絡人
 
+@section breadcrumb{
+    <li>
+        <i class="icon-angle-right"></i>
+        @Html.ActionLink("客戶聯絡人", "Index", "客戶聯絡人")
+    </li>
+}
+
 @{
     ViewBag.Title = "Create";
 }
@@ -7,10 +14,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>客戶聯絡人</h4>
         <hr />

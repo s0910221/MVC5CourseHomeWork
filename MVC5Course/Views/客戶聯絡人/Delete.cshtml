@@ -1,5 +1,12 @@
 ﻿@model MVC5Course.Models.客戶聯絡人
 
+@section breadcrumb{
+    <li>
+        <i class="icon-angle-right"></i>
+        @Html.ActionLink("客戶聯絡人", "Index", "客戶聯絡人")
+    </li>
+}
+
 @{
     ViewBag.Title = "Delete";
 }
@@ -61,7 +68,8 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

@@ -1,5 +1,12 @@
 ﻿@model IEnumerable<MVC5Course.Models.ViewModels.CustomerCountViewModel>
 
+@section breadcrumb{
+    <li>
+        <i class="icon-angle-right"></i>
+        @Html.ActionLink("客戶資料", "Index", "客戶資料")
+    </li>
+}
+
 @{
     ViewBag.Title = "Index";
 }

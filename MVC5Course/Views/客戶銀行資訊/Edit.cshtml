@@ -1,5 +1,12 @@
 ﻿@model MVC5Course.Models.客戶銀行資訊
 
+@section breadcrumb{
+    <li>
+        <i class="icon-angle-right"></i>
+        @Html.ActionLink("客戶銀行資訊", "Index", "客戶銀行資訊")
+    </li>
+}
+
 @{
     ViewBag.Title = "Edit";
 }
