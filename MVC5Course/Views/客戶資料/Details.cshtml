@@ -1,0 +1,20 @@
+﻿@model MVC5Course.Models.客戶資料
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div>
+    <h4>客戶資料</h4>
+    <hr />
+    @Html.DisplayForModel()
+</div>
+<h2>ContactList</h2>
+
+@Html.Action("Details_ContactList", new { id = Model.Id })
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
