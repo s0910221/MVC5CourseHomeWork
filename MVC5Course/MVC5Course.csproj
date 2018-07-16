@@ -180,6 +180,7 @@
     <Compile Include="Controllers\客戶聯絡人Controller.cs" />
     <Compile Include="Controllers\客戶資料Controller.cs" />
     <Compile Include="Controllers\客戶銀行資訊Controller.cs" />
+    <Compile Include="Filters\GetActionRunTimeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

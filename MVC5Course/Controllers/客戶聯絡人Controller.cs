@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MVC5Course.Filters;
 using MVC5Course.Models;
 using MVC5Course.Models.ViewModels;
 
@@ -42,10 +43,9 @@ namespace MVC5Course.Controllers
 
         }
 
-        // GET: 客戶聯絡人
+        [GetActionRunTime(Unit = "millisec")]
         public ActionResult Index()
         {
-
             ViewBag.columnList = new SelectList(columnList, "Value", "Text");
             ViewBag.orderList = new SelectList(orderList, "Value", "Text");
             var 客戶聯絡人 = db.客戶聯絡人.Include(客 => 客.客戶資料);
