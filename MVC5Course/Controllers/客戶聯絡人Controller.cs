@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC5Course.Models;
+using MVC5Course.Models.ViewModels;
 
 namespace MVC5Course.Controllers
 {
@@ -14,12 +15,13 @@ namespace MVC5Course.Controllers
     {
         private CustomerEntities db = new CustomerEntities();
 
-        //private I客戶聯絡人Repository contactRepository = new 客戶聯絡人Repository();
+        private 客戶聯絡人Repository contactRepository;
         private IEnumerable<SelectListItem> columnList;
         private IEnumerable<SelectListItem> orderList;
 
         public 客戶聯絡人Controller()
         {
+            contactRepository = RepositoryHelper.Get客戶聯絡人Repository();
             columnList = new List<SelectListItem>
             {
                 new SelectListItem { Value = null, Text = "請選擇" },
@@ -108,6 +110,27 @@ namespace MVC5Course.Controllers
                 }
             }
             return View(query.ToList());
+        }
+
+        public ActionResult BatchUpdate(IList<ContactBatchUpdateViewModel> data)
+        {
+            if (ModelState.IsValid)
+            {
+                foreach (var item in data)
+                {
+                    var contact = contactRepository.Find(item.Id);
+                    contact.職稱 = item.職稱;
+                    contact.手機 = item.手機;
+                    contact.電話 = item.電話;
+                }
+                contactRepository.UnitOfWork.Commit();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.columnList = new SelectList(columnList, "Value", "Text");
+            ViewBag.orderList = new SelectList(orderList, "Value", "Text");
+            ViewData.Model = contactRepository.All();
+            return View("Index");
         }
 
         // GET: 客戶聯絡人/Details/5

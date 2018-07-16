@@ -222,6 +222,7 @@
     <Compile Include="Models\RepositoryHelper.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\ContactViewModel.cs" />
     <Compile Include="Models\ViewModels\CustomerViewModel.cs" />
     <Compile Include="Models\客戶聯絡人.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -336,6 +337,8 @@
     <Content Include="Views\Shared\EditorTemplates\客戶資料.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\客戶銀行資訊.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\客戶銀行資訊.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\客戶聯絡人.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\客戶聯絡人.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
